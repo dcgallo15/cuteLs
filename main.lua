@@ -63,7 +63,7 @@ local currLine = f:read("*l")
 
 local isDir = false
 
-function callDu(elemFname, newFname)
+local function callDu(elemFname, newFname)
     local tmp = os.execute("/bin/du -ksh " .. elemFname .. " > " .. newFname)
     if tmp == false then
         error("Cannot Call du")
