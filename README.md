@@ -1,4 +1,4 @@
-# A fomatted display of the ls command in linux using a lua script. 
+# A fomatted display of the ls command in linux using a lua script.
 
 **Usage `./main.lua`**
 

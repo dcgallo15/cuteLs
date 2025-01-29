@@ -1,7 +1,7 @@
 #!/bin/lua
 
 -- Will print cwd in format:
--- PERMS    SUBDIRSCOUNT    SIZE    FILENAME
+-- PERMS    LINKS    SIZE    FILENAME
 -- directories have a / at the end and their size is also displayed using du
 
 local function split (xs)
@@ -37,7 +37,7 @@ end
 
 -- FIXME: maybe implement some version of ennums 'go style' with 'iota'?
 local PERMS = 1
-local SUBDIRCOUNT = 2
+local LINKS = 2
 local OWNER = 3
 local GROUP = 4
 local SIZE = 5 -- Always 4.0K on directory
@@ -91,7 +91,7 @@ while currLine ~= nil do -- !=
         end
         writeMsgCol(elems[PERMS], Magenta)
         io.stdout:write("  ")
-        writeMsgCol(elems[SUBDIRCOUNT], Orange)
+        writeMsgCol(elems[LINKS], Orange)
         io.stdout:write("  ")
         writeMsgCol(elems[SIZE], Cyan)
         io.stdout:write("\t")
